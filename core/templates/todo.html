@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+<img src="{% static '1.png' %}">
+
+<form method="post">
+  {% csrf_token %}
+  <p><input type="text" name="task" /><button>Add</button></p>
+</form>
+  {% for row in todos%}
+  <div>
+    {{row.task}} - <a href="/deleteTodo/?id={{row.id}}">Delete</a>
+  </div>
+  {% endfor %}
+{% endblock %}
