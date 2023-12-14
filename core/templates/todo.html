@@ -4,7 +4,6 @@
 
 {% block content %}
 <img src="{% static '1.png' %}">
-<h1>Testing Git</h1>
 <form method="post">
   {% csrf_token %}
   <p><input type="text" name="task" /><button>Add</button></p>
